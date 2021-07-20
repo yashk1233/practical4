@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+6546 Practical 4
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function factorial() {
+            var num = parseInt(document.getElementById("number").value);
+
+            var ans = 1;
+            for (i = 1; i <= num; i++) {
+                ans = ans * i;
+            }
+            document.getElementById("result").value = ans;
+
+        }
+
+        function evaluateExp() {
+            var exp = document.getElementById("exp").value;
+            var a = eval(exp);
+            var result = a;
+
+
+
+
+            document.getElementById("exp_result").value = result;
+
+
+        }
+
+        function fibonacci1() {
+            var num = parseInt(document.getElementById("range").value);
+            a = 0;
+            b = 1;
+            var fb = '0 1 ';
+            for (i = 2; i < num; i++) {
+                // fb[i] = fb[a] + fb[b];
+                c = a + b;
+                fb += c + "  ";
+
+                a = b;
+                b = c;
+
+
+            }
+
+
+            document.getElementById("fbresult").value = fb;
+
+
+
+        }
+
+        function primenumber() {
+            var num = parseInt(document.getElementById("prange").value);
+            var a = num;
+           
+           
+            primeNumbers="";
+
+           
+
+            for (i = 1; i <= a; i++) {
+                counter = 0;
+                for (num = i; num >= 1; num--) {
+                    if (i % num == 0) {
+                        counter = counter + 1;
+                    }
+                }
+                if (counter == 2) {
+                    //Appended the Prime number to the String
+                    primeNumbers = primeNumbers + i + ", ";
+                }
+            }
+
+
+
+            document.getElementById("presult").value = primeNumbers;
+        }
+
+        function rnum() {
+
+
+            var a, no, b, temp = 0;
+            var no = parseInt(document.getElementById("rnumber").value);
+
+            while (no > 0) {
+                a = no % 10;
+                no = parseInt(no / 10);
+                temp = temp * 10 + a;
+            }
+
+            document.getElementById("rresult").value = temp;
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+    <p id="head">PRACTICAL 4</p>
+
+    <hr color="black">
+    <hr color="black">
+    <br><br>
+
+    <form action="">
+        <center>
+            <table class="content-table" border="0">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center">
+                            <p id="slogan">Calculate Factorial Of Number</p>
+                        </th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p id="form">ENTER NUMBER : </p>
+                        </td>
+
+                        <td>
+                            <input id="number" class="textboxid" type="text">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td align="center">
+                            <input class="bt" type="button" value="submit" onclick="factorial()">
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p id="form">RESULT :</p>
+                        </td>
+                        <td>
+                            <input id="result" class="textboxid" type="text">
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <hr color="red"> <br> <br>
+
+            <!-- fibonacci -->
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center">
+                            <p id="slogan">Fibonnacci Series</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p id="form">ENTER Number :</p>
+                        </td>
+                        <td align="center">
+                            <input id="range" class="textboxid" type="text">
+                        </td>
+
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td align="center">
+                            <input class="bt" type="button" value="submit" onclick="fibonacci1()"> <br><br>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p id="form">RESULT :</p>
+                        </td>
+                        <td>
+                            <textarea name="" id="fbresult" class="textbox" cols="30" rows="10"></textarea>
+                            <!-- <input id="fbresult" class="textboxid" type="text"> -->
+                        </td>
+                    </tr>
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <hr color="red"> <br> <br>
+            <!-- fibonacci-->
+
+            <!-- prime -->
+
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center">
+                            <p id="slogan">Prime Number</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p id="form">ENTER Range :</p>
+                        </td>
+                        <td align="center">
+                            <input id="prange" class="textboxid" type="text">
+                        </td>
+
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td align="center">
+                            <input class="bt" type="button" value="submit" onclick="primenumber()"> <br><br>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p id="form">RESULT :</p>
+                        </td>
+                        <td>
+                            <textarea name="" id="presult" class="textbox" cols="30" rows="10"></textarea>
+                            <!-- <input id="fbresult" class="textboxid" type="text"> -->
+                        </td>
+                    </tr>
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <hr color="red"> <br> <br>
+            <!-- prime -->
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center">
+                            <p id="slogan">Eavalute Expression</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p id="form">ENTER EXPRESSION :</p>
+                        </td>
+                        <td>
+                            <input id="exp" class="textboxid" type="text">
+                        </td>
+
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td align="center">
+                            <input class="bt" type="button" value="submit" onclick="evaluateExp()">
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p id="form">RESULT :</p>
+                        </td>
+                        <td>
+                            <input id="exp_result" class="textboxid" type="text">
+                        </td>
+                    </tr>
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <hr color="red"> <br> <br>
+
+
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center">
+                            <p id="slogan">Reverse Of Number</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p id="form">ENTER Range :</p>
+                        </td>
+                        <td align="center">
+                            <input id="rnumber" class="textboxid" type="text">
+                        </td>
+
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td align="center">
+                            <input class="bt" type="button" value="submit" onclick="rnum()"> <br><br>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p id="form">RESULT :</p>
+                        </td>
+                        <td>
+                            <textarea name="" id="rresult" class="textboxid" cols="30" rows="10"></textarea>
+                            <!-- <input id="fbresult" class="textboxid" type="text"> -->
+                        </td>
+                    </tr>
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+
+
+
+
+
+
+        </center>
+    </form>
+
+
+
+</body>
+
+</html>
